@@ -1,0 +1,23 @@
+doctype
+head
+  title testPlayground
+body
+  h1 plusser for testPlayground
+  .app
+    input#numberOne(type="number")
+    span  +
+    input#numberTwo(type="number")
+    button#plusser Plus numbers
+    h3#result
+  script.
+    var numberOne = document.getElementById('numberOne'),
+      numberTwo = document.getElementById('numberTwo'),
+      resultDisplay = document.getElementById('result'),
+      plusser = document.getElementById('plusser');
+    plusser.addEventListener('click', function(event) {
+      var first = parseInt(numberOne.value, 10),
+        second = parseInt(numberTwo.value, 10),
+        result = plus(first, second);
+      resultDisplay.innerHTML = "= " + result;
+    });
+  script(src="js/plus.js")

@@ -1,0 +1,27 @@
+doctype
+<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if !IE]><!-->
+html(lang="en")
+  <!--<![endif]-->
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    title tests : plus
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0")
+    link(rel="stylesheet", href="../vendor/mocha/mocha.css")
+  body
+    #mocha
+    script(src="../vendor/mocha/mocha.js")
+    script(src="../vendor/chai/chai.js")
+    script.
+      mocha.setup('bdd');
+      expect = chai.expect;
+    script(src="../js/plus.js")
+    script(src="../js/test/test.js")
+    script.
+      if (window.mochaPhantomJS) {
+        mochaPhantomJS.run();
+      } else {
+        mocha.run();
+      }
